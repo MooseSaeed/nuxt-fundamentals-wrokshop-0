@@ -1,9 +1,21 @@
 <script setup>
-// Use the productId variable to pass the id as parameter with the fetch request
 const { id: productId } = useRoute().params;
 
-// Update this variable ref with the data
 const product = ref(null);
+
+const { data } = await useAsyncData(
+  () =>
+    $fetch("/api/product", {
+      params: {
+        id: productId,
+      },
+    }),
+  {
+    pick: ["id", "title", "images", "price"],
+  }
+);
+
+product.value = data.value;
 </script>
 
 <template>

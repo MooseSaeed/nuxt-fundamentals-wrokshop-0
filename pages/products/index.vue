@@ -1,6 +1,17 @@
 <script setup>
-// Update this variable ref with the data
 const products = ref([]);
+
+const { data } = await useFetch("/api/products", {
+  transform: (allProducts) =>
+    allProducts.map((product) => {
+      const { images, price, ...restOfProperties } = product;
+      restOfProperties.image = product.images[0];
+
+      return restOfProperties;
+    }),
+});
+
+products.value = data.value;
 </script>
 
 <template>
