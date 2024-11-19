@@ -17,19 +17,13 @@ products.value = data.value;
 <template>
   <div>
     <section v-if="products.length">
-      <!-- Loop over the products and render a NuxtLink for each -->
-      <NuxtLink
-        v-for="product in products"
-        :key="product.id"
-        :to="`/products/${product.id}`"
-      >
+      <NuxtLink v-for="product in products" :key="product.id" :to="`/products/${product.id}`">
         {{ product.title }}
       </NuxtLink>
     </section>
     <section v-else>
       <p>
-        Use <code class="text-yellow-500">useFetch()</code> composable to fetch
-        the products and update the
+        Use <code class="text-yellow-500">useFetch()</code> composable to fetch the products and update the
         <code class="text-yellow-500">products</code> variable ref
       </p>
     </section>
