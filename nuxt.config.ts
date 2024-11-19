@@ -6,4 +6,6 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "dark",
   },
+
+  // use the head property here 👇
 });

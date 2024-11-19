@@ -1,3 +1,7 @@
+<script setup>
+// Use useSeoMeta here 👇
+</script>
+
 <template>
   <NuxtLayout>
     <NuxtPage />

@@ -21,6 +21,11 @@ if (error.value) {
     fatal: true,
   });
 }
+
+const productTitle = ref(product.value.title);
+const productPrice = ref(product.value.price);
+
+// use useHead here 👇
 </script>
 
 <template>
