@@ -6,6 +6,17 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "dark",
   },
+  app: {
+    pageTransition: { name: "fade-page", mode: "out-in" },
 
-  // use the head property here 👇
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/vs-favicon.ico",
+        },
+      ],
+    },
+  },
 });

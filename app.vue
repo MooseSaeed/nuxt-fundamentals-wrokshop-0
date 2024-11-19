@@ -1,5 +1,9 @@
 <script setup>
-// Use useSeoMeta here 👇
+useSeoMeta({
+  title: "Nuxt Fundamentals Workshop",
+  description: "Prepare yourself to become a certified Nuxt super star!",
+  ogDescription: "Prepare yourself to become a certified Nuxt super star!",
+});
 </script>
 
 <template>

@@ -25,7 +25,19 @@ if (error.value) {
 const productTitle = ref(product.value.title);
 const productPrice = ref(product.value.price);
 
-// use useHead here 👇
+useHead({
+  title: productTitle.value,
+  meta: [
+    {
+      name: "description",
+      content: `Buy ${productTitle.value} for ${productPrice.value}$.`,
+    },
+    {
+      property: "og:description",
+      content: `Buy ${productTitle.value} for ${productPrice.value}$.`,
+    },
+  ],
+});
 </script>
 
 <template>
