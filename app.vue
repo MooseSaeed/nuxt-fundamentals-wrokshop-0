@@ -1,10 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const renderingMode = import.meta.client
+  ? "client"
+  : "server";
+</script>
 
 <template>
-  <div
-    class="text-center dark:text-gray-200 text-gray-800 absolute-center h-screen flex flex-col justify-center items-center"
-  >
-    <h1 class="font-semibold text-5xl text-primary">Nuxt Fundamentals Workshop</h1>
-    <p class="text-lg font-normal mt-3">You already solved the exercise if you see this</p>
+  <div class="h-screen flex justify-center items-center">
+    <h1 class="text-3xl">
+      I rendered on the
+      <span class="text-primary"> {{ renderingMode }} </span
+      >!
+    </h1>
   </div>
 </template>
