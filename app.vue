@@ -1,15 +1,46 @@
-<script setup lang="ts">
-const renderingMode = import.meta.client
-  ? "client"
-  : "server";
-</script>
-
 <template>
-  <div class="h-screen flex justify-center items-center">
-    <h1 class="text-3xl">
-      I rendered on the
-      <span class="text-primary"> {{ renderingMode }} </span
-      >!
-    </h1>
+  <div class="app-wrapper">
+    <header class="header">
+      <nav class="header__nav">
+        <ULink to="/" class="font-semibold text-lg relative">
+          <span class="text-primary">Nuxt</span>
+          <span>Fundamentals</span>
+          <span class="pl-1 top-5 font-thin">Workshop</span>
+        </ULink>
+        <div class="flex justify-center items-center">
+          <UButton icon="lucide:menu" />
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Activate Nuxt Pages Here -->
+    </main>
   </div>
 </template>
+
+<style>
+.app-wrapper {
+  @apply h-screen relative text-lg;
+}
+
+.header {
+  @apply h-16 border-b-2 border-primary;
+}
+
+.header__nav {
+  @apply flex gap-2 justify-between items-center flex-row px-4 h-full md:container mx-auto;
+}
+
+main {
+  @apply py-4 px-6 flex justify-center items-center flex-col text-left min-h-[80%] container mx-auto;
+}
+
+a:not(.header__nav > *) {
+  @apply text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white hover:underline transition-colors block;
+}
+
+h1 {
+  @apply font-semibold text-primary-500 text-4xl;
+}
+</style>
